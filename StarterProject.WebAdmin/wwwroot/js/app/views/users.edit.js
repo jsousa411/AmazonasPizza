@@ -13,7 +13,7 @@ views.users.edit = (function () {
     var subscribeBtnDeleteClick = function () {
         $('.btn-delete').click(function () {
             var id = $('#Id').val().getNumbers();
-            views.app.excluirRegistro('/Users/Delete/' + id, function () {
+            views.app.deleteRecord('/Users/Delete/' + id, function () {
                 views.app.navTo('/Users/Index');
             });
         });

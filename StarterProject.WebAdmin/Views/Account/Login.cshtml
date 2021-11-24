@@ -30,6 +30,10 @@
             </p>
             <p>Login in. To see it in action.</p>
             <form class="m-t" role="form" asp-action="Login">
+                @if (ViewBag.Error != null)
+                {
+                    <p class="text-danger">@ViewBag.Error</p>
+                }
                 <input asp-for="ReturnUrl" type="hidden" />
                 <div class="form-group">
                     <input asp-for="Email" class="form-control" placeholder="E-mail" required="">

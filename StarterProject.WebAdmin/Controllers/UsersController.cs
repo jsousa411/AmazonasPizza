@@ -46,7 +46,7 @@ namespace StarterProject.WebAdmin.Controllers
 
             if (ModelState.IsValid)
             {
-                user.Password = Tools.EncryptPassword("admin", out byte[] salt);
+                user.Password = Tools.EncryptPassword(user.Password, out byte[] salt);
                 user.Salt = salt;
                 Context.User.Add(user);
                 Context.SaveChanges();

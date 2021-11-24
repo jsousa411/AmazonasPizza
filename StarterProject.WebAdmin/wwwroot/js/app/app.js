@@ -171,7 +171,7 @@ views.app = (function () {
     };
 
     var deleteRecord = function (url, functionSuccess) {
-        confirmSimNao("Confirm delete?", function () {
+        confirmYesNo("Confirm delete?", function () {
             $.ajax({
                 method: "POST",
                 url: url
