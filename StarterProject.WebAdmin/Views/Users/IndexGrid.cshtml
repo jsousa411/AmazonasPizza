@@ -9,7 +9,7 @@
         columns.Add(model => model.Email).Titled("E-mail");
         columns.Add(model => model.IsEmailConfirmed).Titled("E-mail Confirmed").Encoded(false).RenderedAs(model =>
         {
-            if (model.Active)
+            if (model.IsEmailConfirmed)
             {
                 return "<span class=\"badge badge-success\">Confirmed</span>";
             }
