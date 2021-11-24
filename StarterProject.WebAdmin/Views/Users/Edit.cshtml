@@ -1,0 +1,58 @@
+﻿@{
+    string action = ViewContext.RouteData.Values["action"].ToString().Capitalize();
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Users</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Records</li>
+            <li class="breadcrumb-item"><a href="/Users" class="ajax-link">Users</a></li>
+            <li class="breadcrumb-item active">@action</li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox" id="panel-form">
+                <div class="ibox-title">
+                    <h5>@Model.Name</h5>
+                </div>
+                <div class="ibox-content">
+                    <form asp-action="@action" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#formContent" data-ajax-complete="views.users.edit.init" data-ajax-loading="#loading-ajax-form">
+                        <div id="formContent">
+                            <partial name="EditForm" />
+                        </div>
+                        <div class="mt-5 text-center">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            @if (Model.Id > 0)
+                            {
+                                <button type="button" class="btn btn-danger btn-delete">Delete</button>
+                            }
+
+                            <button type="button" onclick="javascript:history.back()" class="btn btn-secondary">Back</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.IsAjaxRequest == true)
+{
+    <script>
+        views.users.edit.init();
+    </script>
+}
+else
+{
+    @section Scripts {
+        <script>
+            views.users.edit.init();
+        </script>
+    }
+}

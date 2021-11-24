@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "StarterProject": "Server=.\\;Database=StarterProject;User Id=sa;Password=1234;"
+  }
+}
