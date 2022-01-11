@@ -25,7 +25,7 @@ namespace StarterProject.WebAdmin.Controllers
             return View(new LoginModel { ReturnUrl = returnUrl });
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel login)
         {
             try
