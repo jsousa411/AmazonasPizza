@@ -1,20 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StarterProject.Context.Contexts;
 using StarterProject.WebSite.Models;
 using System.Diagnostics;
+ 
 
 namespace StarterProject.WebSite.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            var product = _context.Product.FirstOrDefault();
+            ViewBag.ProductAdvertise = product.Description;
+
             return View();
         }
 

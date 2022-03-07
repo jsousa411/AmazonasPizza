@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 using StarterProject.Context;
+using StarterProject.Context.Contexts;
 using System.Globalization;
 
 var cultureInfo = new CultureInfo("en-US");
@@ -9,6 +11,9 @@ CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
 CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//configure entity framework with .Net
+builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer("Server=.\\MSSQLSERVER01;Database=AmazonasPizza;Trusted_Connection=True;"));
 
 builder.Services.AddControllersWithViews();
 

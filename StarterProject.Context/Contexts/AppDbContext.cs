@@ -20,6 +20,8 @@ namespace StarterProject.Context.Contexts
 
         public DbSet<User> User { get; set; }
 
+        public DbSet<Products> Product { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

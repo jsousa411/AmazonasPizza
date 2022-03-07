@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "StarterProject": "Server=.\\;Database=StarterProject;User Id=sa;Password=1234;"
+    "StarterProject": "Server=.\\MSSQLSERVER01;Database=AmazonasPizza;Trusted_Connection=True;"
   }
 }
