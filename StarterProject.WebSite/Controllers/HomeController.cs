@@ -19,8 +19,12 @@ namespace StarterProject.WebSite.Controllers
 
         public IActionResult Index()
         {
-            var product = _context.Product.FirstOrDefault();
-            ViewBag.ProductAdvertise = product.Description;
+            var advertise = _context.AdvertisementConfig.FirstOrDefault();
+
+            if(advertise != null)
+             ViewBag.ProductAdvertise = advertise.Description;
+            
+            
 
             return View();
         }

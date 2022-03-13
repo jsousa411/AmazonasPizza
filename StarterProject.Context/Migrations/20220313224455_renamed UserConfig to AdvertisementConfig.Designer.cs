@@ -12,8 +12,8 @@ using StarterProject.Context.Contexts;
 namespace StarterProject.Context.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220306193750_creating product class")]
-    partial class creatingproductclass
+    [Migration("20220313224455_renamed UserConfig to AdvertisementConfig")]
+    partial class renamedUserConfigtoAdvertisementConfig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,38 @@ namespace StarterProject.Context.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("StarterProject.Context.Contexts.AppContext.AdvertisementConfig", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(360)
+                        .HasColumnType("nvarchar(360)");
+
+                    b.Property<string>("Type")
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("AdvertisementConfig");
+                });
 
             modelBuilder.Entity("StarterProject.Context.Contexts.AppContext.Products", b =>
                 {
@@ -60,6 +92,9 @@ namespace StarterProject.Context.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Product");
                 });

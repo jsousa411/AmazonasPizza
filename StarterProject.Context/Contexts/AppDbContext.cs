@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Castle.Components.DictionaryAdapter;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using StarterProject.Context.Base;
 using StarterProject.Context.Contexts.AppContext;
@@ -22,11 +23,15 @@ namespace StarterProject.Context.Contexts
 
         public DbSet<Products> Product { get; set; }
 
+        public DbSet<AdvertisementConfig> AdvertisementConfig { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.AddConfiguration(new UserConfiguration());
+            modelBuilder.AddConfiguration(new ProductNameConfiguration());
+            modelBuilder.AddConfiguration(new AdvertisementConfigConfiguration());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
