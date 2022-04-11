@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ProductAdvertiseConfigurationViewModel
+
+@{
 	ViewData["Title"] = "Home Page";
 }
 <!-- Swiper variant 3-->
@@ -17,8 +19,14 @@
 									<div class="group-sm">
 										<div class="label-swiper h4 text-italic text-white" data-caption-animate="fadeInLeftSm" data-caption-delay="200">
 											<span>1 new</span>
-											<span>fresh @ViewBag.ProductAdvertise</span>
+											@if(Model != null)
+											{
+												<span>fresh @Model.FirstCarrouselVariableOne</span>	
+											}
+											
 										</div>
+
+
 										<h1 class="text-italic text-white" data-caption-animate="fadeInRightSm" data-caption-delay="100">Pizza</h1>
 									</div>
 									<h3 class="text-primary-lighter offset-top-5" data-caption-animate="fadeInUpSmall" data-caption-delay="600">with seafood</h3>

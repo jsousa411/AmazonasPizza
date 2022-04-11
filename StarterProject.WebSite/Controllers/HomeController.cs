@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using StarterProject.Context.Contexts;
 using StarterProject.WebSite.Models;
+
 using System.Diagnostics;
- 
+
 
 namespace StarterProject.WebSite.Controllers
 {
@@ -21,12 +23,14 @@ namespace StarterProject.WebSite.Controllers
         {
             var advertise = _context.AdvertisementConfig.FirstOrDefault();
 
-            if(advertise != null)
-             ViewBag.ProductAdvertise = advertise.Description;
-            
-            
+            var productAdConfigViewModel = new ProductAdvertiseConfigurationViewModel();
 
-            return View();
+            if (advertise != null && advertise.Type != null)
+                productAdConfigViewModel.FirstCarrouselVariableOne = advertise.Type;
+
+
+
+            return View(productAdConfigViewModel);
         }
 
         public IActionResult Privacy()
