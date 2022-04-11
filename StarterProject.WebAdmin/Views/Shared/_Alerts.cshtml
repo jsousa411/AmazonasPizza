@@ -1,0 +1,27 @@
+﻿@if (TempData["Success"] != null)
+{
+    <script>
+        views.app.showToastSuccess('@TempData["Success"]');
+    </script>
+}
+
+@if (TempData["Error"] != null)
+{
+    <script>
+        views.app.showToastDanger('@TempData["Error"]');
+    </script>
+}
+
+@if (TempData["Info"] != null)
+{
+    <script>
+        views.app.showToastInfo('@TempData["Info"]');
+    </script>
+}
+
+@if (TempData["Warning"] != null)
+{
+    <script>
+        views.app.showToastWarning('@TempData["Warning"]');
+    </script>
+}

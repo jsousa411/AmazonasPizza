@@ -1,0 +1,170 @@
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment hostingEnvironment
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>xFácil</title>
+	<link href="~/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+	<link href="~/css/showLoading.css" rel="stylesheet" media="screen" />
+	<link href="~/css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link href="~/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+	<link href="~/css/plugins/select2/select2.min.css" rel="stylesheet">
+	<link href="~/css/plugins/select2/select2-bootstrap4.min.css" rel="stylesheet">
+	<link href="~/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+	<link href="~/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+	<link href="~/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+	<link href="~/css/mvc-grid/mvc-grid.css" rel="stylesheet">
+
+	<link href="~/css/animate.css" rel="stylesheet">
+	<link href="~/css/style.css" rel="stylesheet">
+	<link href="~/css/custom.css" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element">
+							<img alt="image" src="~/images/logo.png" />
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="block m-t-xs font-bold ellipsis">@User.Identity.Name</span>
+								<span class="text-muted text-xs block ellipsis">Admin <b class="caret"></b></span>
+							</a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a class="dropdown-item" href="/Profile">Profile</a></li>
+								<li class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="/Account/Logout">Logout</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">
+							<img alt="image" src="~/images/logo-folded.png" />
+						</div>
+					</li>
+					<partial name="_Menu" />
+				</ul>
+			</div>
+		</nav>
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+						@*<form role="search" class="navbar-form-custom" action="search_results.html">
+							<div class="form-group">
+							<input type="text" placeholder="Localizar documento..." class="form-control" name="top-search" id="top-search">
+							</div>
+							</form>*@
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+								Orders <span class="label label-primary">2</span>
+							</a>
+							<ul class="dropdown-menu dropdown-alerts">
+								<li>
+									<div class="text-center link-block"><strong>Select order</strong></div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li><a href="#" class="dropdown-item ellipsis">Item 1</a></li>
+								<li><a href="#" class="dropdown-item ellipsis">Item 2</a></li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="text-center link-block">
+										<a href="#add" class="dropdown-item">
+											<i class="fa fa-plus"></i>
+											<strong>Add new order</strong>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/Account/Logout">
+								<i class="fa fa-sign-out"></i> Logout
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div id="main-content">
+				@RenderBody()
+			</div>
+			<div class="footer">
+				<div class="float-right">
+					<strong>Copyright</strong> Brothers Solutions &copy; @DateTime.Now.Year
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="loading-ajax-form"></div>
+
+	<!-- Mainly scripts -->
+	<script src="~/js/jquery-3.1.1.min.js"></script>
+	<script src="~/js/popper.min.js"></script>
+	<script src="~/js/bootstrap.js"></script>
+	<script src="~/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="~/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- js components -->
+	<script src="~/js/jquery.history.js"></script>
+	<script src="~/js/jquery.showLoading.min.js"></script>
+	<script src="~/js/plugins/pace/pace.min.js"></script>
+	<script src="~/js/plugins/iCheck/icheck.min.js"></script>
+	<script src="~/js/plugins/select2/select2.full.min.js"></script>
+	<script src="~/js/plugins/select2/select2-pt-BR.js"></script>
+	<script src="~/js/plugins/moment/moment.js"></script>
+	<script src="~/js/plugins/mask/jquery.mask.min.js"></script>
+	<script src="~/js/plugins/sweetalert/sweetalert.min.2.1.2.js"></script>
+	<script src="~/js/plugins/toastr/toastr.min.js"></script>
+	<script src="~/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+	<script src="~/js/plugins/datapicker/bootstrap-datepicker.pt-BR.min.js"></script>
+	<script src="~/js/plugins/dataTables/datatables.min.js"></script>
+	<script src="~/js/plugins/dropzone/dropzone.js"></script>
+
+	<!-- libs -->
+	<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+	<script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="~/js/inspinia.js"></script>
+	<script src="~/js/plugins/pace/pace.min.js"></script>
+	<script src="~/js/mvc-grid/mvc-grid.js"></script>
+	
+    <script src="~/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="~/js/plugins/flot/jquery.flot.js"></script>
+    <script src="~/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="~/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="~/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="~/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="~/js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="~/js/plugins/flot/jquery.flot.time.js"></script>
+
+	<environment names="Development">
+		@foreach (var file in System.IO.Directory.GetFiles(System.IO.Path.Combine(hostingEnvironment.WebRootPath, "js", "app")).OrderBy(c => c))
+		{
+			<script src="~/js/app/@System.IO.Path.GetFileName(file)" asp-append-version="true"></script>
+		}
+		@foreach (var file in System.IO.Directory.GetFiles(System.IO.Path.Combine(hostingEnvironment.WebRootPath, "js", "app", "views")))
+		{
+			<script src="~/js/app/views/@System.IO.Path.GetFileName(file)" asp-append-version="true"></script>
+		}
+	</environment>
+	<environment names="Homolog,Staging,Production">
+		<script src="~/js/site.min.js" asp-append-version="true"></script>
+	</environment>
+	<script>
+		views.app.initApp();
+	</script>
+	@RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

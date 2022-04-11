@@ -1,0 +1,51 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Users</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Records</li>
+            <li class="breadcrumb-item active">Users</li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox" id="users-grid">
+                <div class="ibox-title">
+                    <div class="toolbar-search">
+                        <div class="position-relative search-field">
+                            <i class="fa fa-search position-absolute pos-left fs-lg px-2 py-1 mt-1 fs-xs"></i>
+                            <input type="text" class="form-control form-control-sm pl-4 grid-search" placeholder="Name, e-mail...">
+                        </div>
+                    </div>
+                    <div class="ibox-tools">
+                        <a href="/Users/Add" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Add</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        @Html.AjaxGrid("/Users/IndexGrid")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.IsAjaxRequest == true)
+{
+    <script>
+        views.users.index.init();
+    </script>
+}
+else
+{
+    @section Scripts {
+        <script>
+            views.users.index.init();
+        </script>
+    }
+}

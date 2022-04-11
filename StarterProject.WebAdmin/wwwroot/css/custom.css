@@ -1,0 +1,112 @@
+.swal-footer {
+    text-align: center;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ibox-tools > select.form-control:not([size]):not([multiple]) {
+    height: 1.7rem;
+    font-size: 0.8rem;
+    padding: 0px 12px;
+    display: inline-block;
+    width: inherit;
+}
+
+.icon-danger {
+    color: #f44336;
+}
+
+.icon-success {
+    color: #4CAF50;
+}
+
+label.required::after {
+    content: " *";
+    color: #ff3232;
+}
+
+label.empty-label {
+    display: block;
+    color: transparent;
+}
+
+    label.empty-label::after {
+        content: "-";
+    }
+
+label.checkbox-label {
+    margin-top: 7px;
+}
+
+
+.input-validation-error {
+    border-color: #ED5565;
+}
+
+    .input-validation-error:focus {
+        border-color: #ED5565;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(256, 54, 149, 0.25);
+        box-shadow: 0 0 0 0.2rem rgba(256, 54, 149, 0.25);
+    }
+
+    .input-validation-error ~ .select2 .select2-selection {
+        border-color: #ED5565;
+    }
+
+        .input-validation-error ~ .select2 .select2-selection:focus {
+            border-color: #ED5565;
+            -webkit-box-shadow: 0 0 0 0.2rem rgba(256, 54, 149, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(256, 54, 149, 0.25);
+        }
+
+.field-validation-error {
+    color: #ED5565;
+}
+
+div.icheckbox_square-green {
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.breadcrumb-item.active {
+    font-weight: bold;
+}
+
+.table-cursor tbody tr {
+    cursor: pointer;
+}
+
+.ibox-tools a.btn-success {
+    color: #fff !important;
+}
+
+.toolbar-search {
+    flex: 1;
+}
+
+    .toolbar-search .search-field {
+        width: 18rem;
+    }
+
+        .toolbar-search .search-field .grid-search {
+            width: 18rem;
+        }
+
+.mvc-grid {
+    line-height: inherit;
+    font-size: inherit;
+}
+
+.mvc-grid-popup .mvc-grid-value, .mvc-grid-popup .mvc-grid-method, .mvc-grid-popup .mvc-grid-operator {
+    font-size: 14px;
+}
+
+.mvc-grid-pager .active, .mvc-grid-pager .active:focus, .mvc-grid-pager .active:hover {
+    color: #fff;
+    background-color: #1ab394;
+    border-color: #1ab394;
+}

@@ -1,0 +1,42 @@
+﻿@model IQueryable<User>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Id).Css("collapse");
+        columns.Add(model => model.Name).Titled("Name");
+        columns.Add(model => model.Email).Titled("E-mail");
+        columns.Add(model => model.IsEmailConfirmed).Titled("E-mail Confirmed").Encoded(false).RenderedAs(model =>
+        {
+            if (model.IsEmailConfirmed)
+            {
+                return "<span class=\"badge badge-success\">Confirmed</span>";
+            }
+            else
+            {
+                return "<span class=\"badge badge-danger\">Unconfirmed</span>";
+            }
+        });
+        columns.Add(model => model.Active).Titled("Active").Encoded(false).RenderedAs(model =>
+        {
+            if (model.Active)
+            {
+                return "<span class=\"badge badge-success\">Active</span>";
+            }
+            else
+            {
+                return "<span class=\"badge badge-danger\">Inactive</span>";
+            }
+        });
+    })
+    .Css("table table-hover table-cursor")
+    .Filterable()
+    .Sortable()
+    .Pageable(pager =>
+    {
+        pager.PagesToDisplay = 5;
+        pager.RowsPerPage = 10;
+    })
+    .Empty("No results found")
+)

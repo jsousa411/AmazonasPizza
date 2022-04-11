@@ -1,0 +1,52 @@
+﻿@model User
+
+<partial name="_Alerts" />
+
+<input asp-for="Id" type="hidden" />
+
+<div class="form-row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Name" class="required">Name</label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Email" class="required">Email</label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email"></span>
+        </div>
+    </div>
+</div>
+<div class="form-row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Password" class="required">Password</label>
+            @if (Model.Id > 0)
+            {
+                <input asp-for="Password" type="text" value="*******" class="form-control" readonly>
+            }
+            else
+            {
+                <input asp-for="Password" type="password" class="form-control">
+            }
+            <span asp-validation-for="Password"></span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <div class="mb-3">&nbsp;</div>
+            <label> <input asp-for="IsEmailConfirmed" type="checkbox" class="i-checks">Is Email Confirmed</label>
+            <span asp-validation-for="IsEmailConfirmed"></span>
+        </div>
+    </div>
+    <div class="col-md-3">
+       <div class="form-group">
+            <div class="mb-3">&nbsp;</div>
+            <label> <input asp-for="Active" type="checkbox" class="i-checks">Active</label>
+            <span asp-validation-for="Active"></span>
+        </div>
+    </div>
+</div>

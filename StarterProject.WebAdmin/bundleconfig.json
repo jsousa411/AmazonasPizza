@@ -1,0 +1,15 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/js/site.js",
+    "inputFiles": [
+      "wwwroot/js/app/app.js",
+      "wwwroot/js/app/extensions.js",
+      "wwwroot/js/app/views/*"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

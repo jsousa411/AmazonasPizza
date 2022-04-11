@@ -1,0 +1,14 @@
+﻿@using StarterProject.WebAdmin.Base
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor _contextAccessor
+
+@{
+    if (_contextAccessor?.HttpContext?.Request.IsAjaxRequest() == true)
+    {
+        ViewBag.IsAjaxRequest = true;
+        Layout = null;
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
