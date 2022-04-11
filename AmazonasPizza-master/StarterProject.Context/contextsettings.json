@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "StarterProject": "Server=.\\MSSQLSERVER01;Database=AmazonasPizza;Trusted_Connection=True;"
-  }
-}
