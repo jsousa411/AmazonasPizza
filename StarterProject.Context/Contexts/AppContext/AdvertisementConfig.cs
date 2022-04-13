@@ -33,6 +33,7 @@ namespace StarterProject.Context.Contexts.AppContext
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
+            // Validation for new user to check if user already exist in the database
             using (var context = new AppDbContext())
             {
                 if (context.AdvertisementConfig.Any(c => c.Id != Id && c.Name == Name))
@@ -40,6 +41,7 @@ namespace StarterProject.Context.Contexts.AppContext
                     yield return new ValidationResult("Field not found", new string[] { nameof(Name) });
                 }
             }
+
         }
     }
 

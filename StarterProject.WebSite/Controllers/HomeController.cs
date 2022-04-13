@@ -3,6 +3,7 @@
 using StarterProject.Context.Contexts;
 using StarterProject.WebSite.Models;
 
+using System.Collections.Generic;
 using System.Diagnostics;
 
 
@@ -21,14 +22,28 @@ namespace StarterProject.WebSite.Controllers
 
         public IActionResult Index()
         {
-            var advertise = _context.AdvertisementConfig.FirstOrDefault();
+            var advertise = _context.AdvertisementConfig.ToList();
 
             var productAdConfigViewModel = new ProductAdvertiseConfigurationViewModel();
 
-            if (advertise != null && advertise.Type != null)
-                productAdConfigViewModel.FirstCarrouselVariableOne = advertise.Type;
-
-
+            if (advertise != null)
+            {
+                foreach (var ad in advertise)
+                {
+                    if (ad.Name == "First carrousel - 1")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableOne = ad.Type;
+                    }
+                    else if (ad.Name == "First carrousel - 2")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableTwo = ad.Type;
+                    }
+                    else
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableThree = ad.Type;
+                    }
+                }
+            }
 
             return View(productAdConfigViewModel);
         }
