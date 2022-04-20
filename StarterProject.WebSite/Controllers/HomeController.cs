@@ -30,17 +30,49 @@ namespace StarterProject.WebSite.Controllers
             {
                 foreach (var ad in advertise)
                 {
-                    if (ad.Name == "First carrousel - 1")
+                    if (ad.Name == "variable1-s1")
                     {
-                        productAdConfigViewModel.FirstCarrouselVariableOne = ad.Type;
+                        productAdConfigViewModel.FirstCarrouselVariableOneS1 = ad.Type;
                     }
-                    else if (ad.Name == "First carrousel - 2")
+                    else if (ad.Name == "variable2-s1")
                     {
-                        productAdConfigViewModel.FirstCarrouselVariableTwo = ad.Type;
+                        productAdConfigViewModel.FirstCarrouselVariableTwoS1 = ad.Type;
+                    }
+                    else if (ad.Name == "variable3-s1")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableThreeS1 = ad.Type;
+                    }
+                    else if (ad.Name == "variable1-s2")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableOneS2 = ad.Type;
+                    }
+                    else if (ad.Name == "variable2-s2")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableTwoS2 = ad.Type;
+                    }
+                    else if (ad.Name == "variable3-s2")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableThreeS2 = ad.Type;
+                    }
+                    else if (ad.Name == "variable4-s2")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableFourS2 = ad.Type;
+                    }
+                    else if (ad.Name == "variable1-s3")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableOneS3 = ad.Type;
+                    }
+                    else if (ad.Name == "variable2-s3")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableTwoS3 = ad.Type;
+                    }
+                    else if (ad.Name == "variable3-s3")
+                    {
+                        productAdConfigViewModel.FirstCarrouselVariableThreeS3 = ad.Type;
                     }
                     else
                     {
-                        productAdConfigViewModel.FirstCarrouselVariableThree = ad.Type;
+                       // productAdConfigViewModel.FirstCarrouselVariableThreeS1 = ad.Type;
                     }
                 }
             }

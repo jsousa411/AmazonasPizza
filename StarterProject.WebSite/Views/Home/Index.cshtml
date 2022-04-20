@@ -18,18 +18,19 @@
 								<div class="col-sm-6 col-md-5 col-lg-4 text-uppercase">
 									<div class="group-sm">
 										<div class="label-swiper h4 text-italic text-white" data-caption-animate="fadeInLeftSm" data-caption-delay="200">
-											<span>1 new</span>
-											@if(Model != null)
+											@*<span>1 new</span>*@
+											@*@if(Model != null)
 											{
-												<span>fresh @Model.FirstCarrouselVariableOne</span>	
-											}
+												<span>fresh @Model.FirstCarrouselVariableOneS1</span>	
+											}*@
+											<span>@Model.FirstCarrouselVariableOneS1</span>
 											
 										</div>
 
 
-										<h1 class="text-italic text-white" data-caption-animate="fadeInRightSm" data-caption-delay="100">Pizza</h1>
+										<h1 class="text-italic text-white" data-caption-animate="fadeInRightSm" data-caption-delay="100">@Model.FirstCarrouselVariableTwoS1</h1>
 									</div>
-									<h3 class="text-primary-lighter offset-top-5" data-caption-animate="fadeInUpSmall" data-caption-delay="600">with seafood</h3>
+									<h3 class="text-primary-lighter offset-top-5" data-caption-animate="fadeInUpSmall" data-caption-delay="600">@Model.FirstCarrouselVariableThreeS1</h3>
 									<a class="btn btn-burnt-sienna btn-md btn-shape-circle offset-top-20" href="https://www.toasttab.com/amazonas-pizza/v3/?mode=fulfillment" data-caption-animate="fadeInUpSmall" data-caption-delay="800">order online</a>
 								</div>
 								<div class="col-sm-6 col-md-7 col-lg-8 text-lg-end veil reveal-sm-inline-block">
@@ -63,10 +64,10 @@
 						<div class="container">
 							<div class="row align-items-sm-center">
 								<div class="col-sm-6 col-md-5 col-lg-4">
-									<h5 class="text-italic font-secondary text-white" data-caption-animate="fadeInUpSmall" data-caption-delay="100">From Our Chef</h5>
-									<h2 class="text-uppercase text-white offset-top-0" data-caption-animate="fadeInUpSmall" data-caption-delay="400">Meet the</h2>
-									<h1 class="text-white offset-top-0" data-caption-animate="fadeInUpSmall" data-caption-delay="700">legend</h1>
-									<h4 class="text-primary-lighter offset-top-10" data-caption-animate="fadeInUpSmall" data-caption-delay="1000">California Burger</h4>
+									<h5 class="text-italic font-secondary text-white" data-caption-animate="fadeInUpSmall" data-caption-delay="100">@Model.FirstCarrouselVariableOneS2</h5>
+									<h2 class="text-uppercase text-white offset-top-0" data-caption-animate="fadeInUpSmall" data-caption-delay="400">@Model.FirstCarrouselVariableTwoS2</h2>
+									<h1 class="text-white offset-top-0" data-caption-animate="fadeInUpSmall" data-caption-delay="700">@Model.FirstCarrouselVariableThreeS2</h1>
+									<h4 class="text-primary-lighter offset-top-10" data-caption-animate="fadeInUpSmall" data-caption-delay="1000">@Model.FirstCarrouselVariableFourS2</h4>
 								</div>
 							</div>
 						</div>
@@ -78,10 +79,10 @@
 							<div class="row align-items-sm-center">
 								<div class="col-sm-6 col-md-5 col-lg-4">
 									<div class="label-swiper label-swiper-var-2" data-caption-animate="fadeInUpSmall" data-caption-delay="100">
-										<h4 class="text-italic">hot stuff</h4>
+										<h4 class="text-italic">@Model.FirstCarrouselVariableOneS3</h4>
 									</div>
-									<h1 class="small text-white" data-caption-animate="fadeInUpSmall" data-caption-delay="400">Mexican</h1>
-									<h3 class="text-primary-lighter offset-top-0" data-caption-animate="fadeInUpSmall" data-caption-delay="700">Burger</h3>
+									<h1 class="small text-white" data-caption-animate="fadeInUpSmall" data-caption-delay="400">@Model.FirstCarrouselVariableTwoS3</h1>
+									<h3 class="text-primary-lighter offset-top-0" data-caption-animate="fadeInUpSmall" data-caption-delay="700">@Model.FirstCarrouselVariableThreeS3</h3>
 								</div>
 							</div>
 						</div>
